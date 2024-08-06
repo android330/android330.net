@@ -1,46 +1,20 @@
 import { Box, Container } from '@mui/material';
+import HomeInfoBlock from '../components/HomeInfoBlock';
+import { useState } from 'react';
 
+let homeInformationList = [{pic: "./images/react.png",des: "Test ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest Paragraph"},
+  {pic: "./images/react.png",des: "Test ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest Paragraph"},
+  {pic: "./images/react.png",des: "Test ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest Paragraph"}]
 
 export default function Home(){
+  const [homeInformation, updateHomeInformation] = useState(homeInformationList);
 
     return(
-        <Container component="main" maxWidth="md">
-                <Box
-                sx={{
-                    marginTop: 8,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                  }}>
-                    <Box
-                    component="img"
-                    sx={{
-                    marginTop: 8,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    maxHeight: "100px"
-                  }} alt="test" src="./images/react.png"/>
-                    TestTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest Paragraph
-                  </Box>
-                  <Box
-                sx={{
-                    marginTop: 8,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                  }}>
-                     Test ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest Paragraph
-                  </Box>
-                  <Box
-                sx={{
-                    marginTop: 8,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                  }}>
-                    TestTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest ParagraphTest Paragraph
-                  </Box>
+      <Container component="main" maxWidth="md" sx={{ p: 2, border: '1px dashed grey' }}>
+        {homeInformation.map((infoChunk) =>
+          <HomeInfoBlock descriptionInfo={infoChunk}/>
+        )}
+        
       </Container>
     )
 }
