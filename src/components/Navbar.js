@@ -9,7 +9,7 @@ export default function Navbar(){
     return(
         <Box width="100%" sx={{display: "flex",flexDirection: "row", background: "black"}}>
           <Link variant="h6" sx={{paddingLeft: 2, color: "white", cursor: "pointer"}} onClick={()=>{navigate('/')}}>Projects</Link>
-          
+          <Link variant="h6" sx={{paddingLeft: 2, color: "white", cursor: "pointer"}} onClick={()=>{navigate('/minesweeper')}}>Minesweeper</Link>
         </Box>
     )
 }
